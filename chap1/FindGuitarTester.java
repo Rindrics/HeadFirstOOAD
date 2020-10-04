@@ -11,7 +11,7 @@ public class FindGuitarTester {
                                guitar.getBuilder() + " " + guitar.getModel() + " " +
                                guitar.getType() + " guitar:\n " +
                                guitar.getBackWood() + " back and sides,\n " +
-                               guitar.getTopWood() + "top.\nYou can have it for only $" +
+                               guitar.getTopWood() + " top.\nYou can have it for only $" +
                                guitar.getPrice() + "!");
         } else {
             System.out.println("Sorry, Erin, we have nothing for you.");
