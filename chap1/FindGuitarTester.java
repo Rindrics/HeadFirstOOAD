@@ -3,10 +3,11 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        inventory.addGuitar("V95693", 1499.95, "fender", "Stratocastor", "electric", "Alder", "Alder");
+        inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor",
+                            Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 
-        Guitar whatErinLikes = new Guitar("", 0, "Fender", "Stratocastor",
-                                          "electric", "Alder", "Alder");
+        Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor",
+                                          Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
         Guitar guitar = inventory.search(whatErinLikes);
         if (guitar != null) {
             System.out.println("Erin, you might like this" +
