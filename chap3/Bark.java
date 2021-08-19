@@ -5,4 +5,8 @@ public class Bark {
     public Bark(String sound) {
         this.sound = sound;
     }
+
+    public String getSound() {
+        return sound;
+    }
 }

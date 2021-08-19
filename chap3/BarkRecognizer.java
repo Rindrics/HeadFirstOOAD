@@ -7,5 +7,7 @@ public class BarkRecognizer {
     }
 
     public void recognize(Bark bark) {
+        System.out.println("   BarkRecognizer: Heard a '" +
+        bark.getSound() + "'");
     }
 }
