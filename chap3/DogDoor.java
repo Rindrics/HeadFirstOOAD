@@ -1,5 +1,7 @@
 public class DogDoor {
+
     private boolean open;
+    private List allowedBarks;
 
     public DogDoor() {
         this.open = false;
@@ -20,5 +22,6 @@ public class DogDoor {
     }
 
     public void addAllowedBark(Bark bark) {
+        allowedBarks.add(bark);
     }
 }
