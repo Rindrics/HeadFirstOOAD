@@ -21,5 +21,6 @@ public class BarkRecognizer {
                 return;
             }
         }
+        System.out.println("This dog is not allowed.");
     }
 }
