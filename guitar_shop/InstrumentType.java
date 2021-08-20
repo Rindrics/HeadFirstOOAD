@@ -1,3 +1,3 @@
 public enum InstrumentType {
-    GUITAR;
+    GUITAR, MANDOLIN, BANJO;
 }
