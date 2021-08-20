@@ -6,7 +6,6 @@ JC = javac
 
 CLASSES = \
 	Builder.java \
-	Guitar.java \
 	FindInstrumentTester.java \
 	InstrumentSpec.java \
 	Instrument.java \
