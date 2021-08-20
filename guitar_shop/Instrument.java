@@ -2,7 +2,7 @@ public class Instrument {
     public String serialNumber;
     public double price;
 
-    public Instrument() {
+    public Instrument(String serialNumber, double price, InstrumentSpec spec) {
     }
 
     public InstrumentSpec getSpec() {

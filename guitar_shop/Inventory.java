@@ -3,43 +3,42 @@ import java.util.LinkedList;
 import java.util.Iterator;
 
 public class Inventory {
-    private List<Guitar> guitars;
+    private List<Instrument> instruments;
 
     public Inventory() {
-        guitars = new LinkedList<Guitar>();
+        instruments = new LinkedList<Instrument>();
     }
 
     public void addInstrument(String serialNumber, double price,
                           InstrumentSpec spec) {
-        Instrument instrument = new Instrument(serialNumber, price, builder,
-                                   model, type, backWood, topWood);
+        Instrument instrument = new Instrument(serialNumber, price, spec);
         instruments.add(instrument);
     }
-    public Guitar getGuitar(String serialNumber) {
-        for (Iterator i = guitars.iterator(); i.hasNext();) {
-            Guitar guitar = (Guitar)i.next();
-            if (guitar.getSerialNumber().equals(serialNumber)) {
-                return guitar;
+    public Instrument getInstrument(String serialNumber) {
+        for (Iterator i = instruments.iterator(); i.hasNext();) {
+            Instrument instrument = (Instrument)i.next();
+            if (instrument.getSerialNumber().equals(serialNumber)) {
+                return instrument;
             }
         }
         return null;
     }
     public List search(InstrumentSpec searchInstrument) {
-        for (Iterator i = guitars.iterator(); i.hasNext();) {
-            Guitar guitar = (Guitar)i.next();
-			if (searchGuitar.getBuilder() != guitar.getBuilder())
+        for (Iterator i = instruments.iterator(); i.hasNext();) {
+            Instrument instrument = (Instrument)i.next();
+			if (searchInstrument.getBuilder() != instrument.getBuilder())
 				continue;
-            String model = searchGuitar.getModel().toLowerCase();
+            String model = searchInstrument.getModel().toLowerCase();
             if ((model != null) && (!model.equals("")) &&
-                (!model.equals(guitar.getModel().toLowerCase())))
+                (!model.equals(instrument.getModel().toLowerCase())))
                 continue;
-			if (searchGuitar.getType() != guitar.getType())
+			if (searchInstrument.getType() != instrument.getType())
 				continue;
-			if (searchGuitar.getBackWood() != guitar.getBackWood())
+			if (searchInstrument.getBackWood() != instrument.getBackWood())
 				continue;
-			if (searchGuitar.getTopWood() != guitar.getTopWood())
+			if (searchInstrument.getTopWood() != instrument.getTopWood())
 				continue;
-			return guitar;
+			return instrument;
         }
 		return null;
     }
