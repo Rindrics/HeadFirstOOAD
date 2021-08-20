@@ -3,19 +3,19 @@ import java.util.LinkedList;
 import java.util.Iterator;
 
 public class Inventory {
-    private List<Instrument> instruments;
+    private List inventory;
 
     public Inventory() {
-        instruments = new LinkedList<Instrument>();
+        inventory = new LinkedList();
     }
 
     public void addInstrument(String serialNumber, double price,
                           InstrumentSpec spec) {
         Instrument instrument = new Instrument(serialNumber, price, spec);
-        instruments.add(instrument);
+        inventory.add(instrument);
     }
     public Instrument getInstrument(String serialNumber) {
-        for (Iterator i = instruments.iterator(); i.hasNext();) {
+        for (Iterator i = inventory.iterator(); i.hasNext();) {
             Instrument instrument = (Instrument)i.next();
             if (instrument.getSerialNumber().equals(serialNumber)) {
                 return instrument;
@@ -23,23 +23,13 @@ public class Inventory {
         }
         return null;
     }
-    public List search(InstrumentSpec searchInstrument) {
-        for (Iterator i = instruments.iterator(); i.hasNext();) {
+    public List search(InstrumentSpec searchSpec) {
+        List matchingInstruments = new LinkedList();
+        for (Iterator i = inventory.iterator(); i.hasNext();) {
             Instrument instrument = (Instrument)i.next();
-			if (searchInstrument.getBuilder() != instrument.getBuilder())
-				continue;
-            String model = searchInstrument.getModel().toLowerCase();
-            if ((model != null) && (!model.equals("")) &&
-                (!model.equals(instrument.getModel().toLowerCase())))
-                continue;
-			if (searchInstrument.getType() != instrument.getType())
-				continue;
-			if (searchInstrument.getBackWood() != instrument.getBackWood())
-				continue;
-			if (searchInstrument.getTopWood() != instrument.getTopWood())
-				continue;
-			return instrument;
+            if (instrument.getSpec().matches(searchSpec))
+                matchingInstruments.add(instrument);
         }
-		return null;
+        return matchingInstruments;
     }
 }
