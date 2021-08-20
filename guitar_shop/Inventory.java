@@ -25,7 +25,7 @@ public class Inventory {
         }
         return null;
     }
-    public Guitar search(Guitar searchGuitar) {
+    public List search(InstrumentSpec searchInstrument) {
         for (Iterator i = guitars.iterator(); i.hasNext();) {
             Guitar guitar = (Guitar)i.next();
 			if (searchGuitar.getBuilder() != guitar.getBuilder())
