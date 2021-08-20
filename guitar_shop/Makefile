@@ -18,5 +18,9 @@ default: classes
 
 classes: $(CLASSES:.java=.class)
 
+run:
+	java FindInstrumentTester.java
+
 clean:
 	$(RM) *.class
+
