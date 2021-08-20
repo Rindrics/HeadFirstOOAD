@@ -9,6 +9,7 @@ CLASSES = \
 	FindGuitarTester.java \
 	Guitar.java \
 	InstrumentSpec.java \
+	Instrument.java \
 	Inventory.java \
 	Type.java \
 	Wood.java
