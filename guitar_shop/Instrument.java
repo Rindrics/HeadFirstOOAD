@@ -4,4 +4,7 @@ public class Instrument {
 
     public Instrument() {
     }
+
+    public InstrumentSpec getSpec() {
+    }
 }
