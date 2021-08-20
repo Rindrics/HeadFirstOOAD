@@ -18,5 +18,6 @@ public class Instrument {
     }
 
     public InstrumentSpec getSpec() {
+        return spec;
     }
 }

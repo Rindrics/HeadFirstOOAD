@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.HashMap;
 import java.util.Map;
 
 public class InstrumentSpec {
@@ -6,9 +7,15 @@ public class InstrumentSpec {
     private Map properties;
 
     public InstrumentSpec(Map properties) {
+        if (properties == null) {
+            this.properties = new HashMap();
+        } else {
+            this.properties = new HashMap(properties);
+        }
     }
 
-    public String getProperty(String propertyName) {
+    public Object getProperty(String propertyName) {
+        return properties.get(propertyName);
     }
 
     public Map getProperties() {
