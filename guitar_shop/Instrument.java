@@ -7,4 +7,8 @@ public class Instrument {
 
     public InstrumentSpec getSpec() {
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
