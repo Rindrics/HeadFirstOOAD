@@ -10,6 +10,7 @@ CLASSES = \
 	Guitar.java \
 	InstrumentSpec.java \
 	Instrument.java \
+	InstrumentType.java \
 	Inventory.java \
 	Type.java \
 	Wood.java
